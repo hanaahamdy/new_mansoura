@@ -12,7 +12,7 @@ import '../pages/bids_page.dart';
 class ServiceItemList extends StatelessWidget {
   final ServicesEntity servicesEntity;
 
-   ServiceItemList({Key? key, required this.servicesEntity}) : super(key: key);
+   const ServiceItemList({Key? key, required this.servicesEntity}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

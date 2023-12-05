@@ -228,32 +228,32 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: ColorManager.white,
                         fontWeight: FontWeight.bold)),
                 heightSpace(25.h),
-                Platform.isAndroid ? Container(): _buildOrWidget(),
-                heightSpace(25.h),
-                Platform.isAndroid ? Container(): BlocListener<SocialBloc, SocilaState>(
-                  bloc: _socialBloc,
-                  listener: (_, state){
-                    if(state is SocilaSuccess){
-                      Get.back();
-                      Get.offAll(ServicesPage());
-                    }
-                    else if(state is SocilaLoading){
-                      showMyDialog(context);
-                    }
-                    else if(state is SocialFailure){
-                      Get.back();
-                      showFailureDialoge(context, state.error!.message!);
-                    }
-                  },
-                  child: AppleSignInButton(
-                    style: stp.ButtonStyle.black, // style as needed
-                    type: ButtonType.signIn, // style as needed
-                    onPressed: () async{
-                      _socialBloc.add(SocialEvent(context: context, type: ""));
-                    },
-                  ),
-                ),
-                heightSpace(10.h),
+                // Platform.isAndroid ? Container(): _buildOrWidget(),
+                // heightSpace(25.h),
+                // Platform.isAndroid ? Container(): BlocListener<SocialBloc, SocilaState>(
+                //   bloc: _socialBloc,
+                //   listener: (_, state){
+                //     if(state is SocilaSuccess){
+                //       Get.back();
+                //       Get.offAll(ServicesPage());
+                //     }
+                //     else if(state is SocilaLoading){
+                //       showMyDialog(context);
+                //     }
+                //     else if(state is SocialFailure){
+                //       Get.back();
+                //       showFailureDialoge(context, state.error!.message!);
+                //     }
+                //   },
+                //   child: AppleSignInButton(
+                //     style: stp.ButtonStyle.black, // style as needed
+                //     type: ButtonType.signIn, // style as needed
+                //     onPressed: () async{
+                //       _socialBloc.add(SocialEvent(context: context, type: ""));
+                //     },
+                //   ),
+                // ),
+                // heightSpace(10.h),
                 // BlocListener<LocalAuthBloc, LocalAuthState>(
                 //     bloc: _localAuthBloc,
                 //     listener: (_, state) {

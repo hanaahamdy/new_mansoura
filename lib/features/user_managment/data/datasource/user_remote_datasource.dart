@@ -12,7 +12,6 @@ import '../api_requests/social_register_request.dart';
 import '../api_requests/user_request.dart';
 import '../model/forget_password_model.dart';
 import '../model/login_auth_model.dart';
-import '../model/register_model.dart';
 import '../model/social_model.dart';
 import '../model/user_existe.dart';
 

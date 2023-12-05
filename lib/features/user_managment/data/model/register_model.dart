@@ -2,7 +2,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../../../core/models/base_model.dart';
-import '../../../../core/response/base_response.dart';
 import '../../../services/data/model/add_service_model.dart';
 import '../../domain/entities/register_entity.dart';
 

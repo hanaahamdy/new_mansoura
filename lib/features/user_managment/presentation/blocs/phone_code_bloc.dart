@@ -8,11 +8,9 @@ import '../../../../core/di/di.dart';
 import '../../../../core/errors/base_error.dart';
 import '../../../../core/utils/app_prefs.dart';
 import '../../data/api_requests/forget_password_request.dart';
-import '../../data/api_requests/login_request.dart';
 import '../../domain/entities/login_entity.dart';
 import '../../domain/repository/user_managment_repository.dart';
 import '../../domain/usecase/forget_password_usecase.dart';
-import '../../domain/usecase/login_usecase.dart';
 import '../../domain/usecase/phone_code_usecase.dart';
 
 abstract class PhoneCodeState extends Equatable {}

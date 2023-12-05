@@ -7,20 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';
-import 'package:html/parser.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/font_manager.dart';
-import '../../../../core/resources/langauge_manager.dart';
-import '../../../../core/ui/widgets/bids_item_widget.dart';
 import '../../../../core/ui/widgets/styled_button.dart';
 import '../../../../core/utils/functions.dart';
 import '../../../../core/utils/texts.dart';
 import '../../../user_managment/presentation/pages/login_view.dart';
-import '../bloc/about_bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -110,7 +104,7 @@ class _AccountPageState extends State<AccountPage> {
                       AvatarView(
                           radius: 35,
                           avatarType: AvatarType.CIRCLE,
-                          imagePath: ImageAssets.logo1,
+                          imagePath: ImageAssets.logo,
                           backgroundColor: ColorManager.primary),
                       widthSpace(15.w),
                       Column(
@@ -127,7 +121,7 @@ class _AccountPageState extends State<AccountPage> {
         auth == true ? Container() : Padding(
             padding: EdgeInsets.only(left: 20.w, right: 20.w),
             child: StyledButton(function: (){
-              Get.offAll(LoginScreen());
+              Get.offAll(const LoginScreen());
             }, child: font16Text("تسجيل الدخول أو انشاء حساب جديد", color: ColorManager.white), radius: true,)),
        heightSpace(10.h),
         Container(
@@ -141,7 +135,7 @@ class _AccountPageState extends State<AccountPage> {
                 children: [
                   ///////////////////////////////////////////
                   _buildRowItem('تواصل معنا', ImageAssets.call2, () {
-                    Get.to(ContactUsPage(),
+                    Get.to(const ContactUsPage(),
                         arguments:
                             ContactUsArgs(phone: phone!, fullName: name!));
                   }),
@@ -153,7 +147,7 @@ class _AccountPageState extends State<AccountPage> {
                   heightSpace(18.h),
                   ///////////////////////////////////////////
                   _buildRowItem('عن التطبيق', ImageAssets.info, () {
-                    Get.to(AboutPage());
+                    Get.to(const AboutPage());
                   }),
                   heightSpace(18.h),
                   Divider(
@@ -164,7 +158,7 @@ class _AccountPageState extends State<AccountPage> {
                   ///////////////////////////////////////////
                   _buildRowItem('الشروط والأحكام', ImageAssets.document_text,
                       () {
-                    Get.to(ConditionsPage());
+                    Get.to(const ConditionsPage());
                   }),
                   heightSpace(18.h),
                   Divider(
@@ -184,7 +178,7 @@ class _AccountPageState extends State<AccountPage> {
                         Get.back();
                       },
                       btnOkOnPress: () async{
-                        var result = await Get.to(DeleteAccountPage());
+                        var result = await Get.to(const DeleteAccountPage());
                         if(result == "delete"){
                           setState(() {
                             auth = false;

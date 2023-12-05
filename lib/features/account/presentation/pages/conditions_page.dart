@@ -58,7 +58,6 @@ class _ConditionsPageState extends State<ConditionsPage> {
           leading: Padding(
               padding: EdgeInsets.all(10.w),
               child: Get.locale ==ARABIC_LOCAL ? FaIcon(FontAwesomeIcons.chevronRight, color: ColorManager.black, size: 13.w,) :  FaIcon(FontAwesomeIcons.chevronLeft, color: ColorManager.black, size: 13.w,)
-
           ).onTap((){
             Get.back();
           })

@@ -11,11 +11,9 @@ import '../../../../../core/resources/color_manager.dart';
 import '../../../../../core/resources/langauge_manager.dart';
 import '../../../../../core/ui/items_shimmer/service_loading_widget.dart';
 import '../../../../../core/ui/widgets/bids_item_widget.dart';
-import '../../../../../core/ui/widgets/network/network_list_without_refresh.dart';
 import '../../../../../core/ui/widgets/search_text_field.dart';
 import '../../../../../core/utils/functions.dart';
 import '../../../../../core/utils/texts.dart';
-import '../../../domain/entity/add_service_entity.dart';
 import '../../bloc/search_bloc.dart';
 
 class SearchPage extends StatefulWidget {
@@ -106,7 +104,7 @@ class _SearchPageState extends State<SearchPage> {
                          itemCount: state.data.length)]);
                  }
                  else if(state is SearchLoading){
-                   return ServiceLoadingWidget();
+                   return const ServiceLoadingWidget();
                  }
                  else if(state is SearchFailure){
                    return Center(

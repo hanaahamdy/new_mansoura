@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-import '../../../../core/resources/color_manager.dart';
 import '../../domain/entity/gallery_entity.dart';
 
 
@@ -47,7 +46,7 @@ class _GalleryPageState extends State<GalleryPage> {
             );
           },
           itemCount: widget.galleryItems.length,
-          loadingBuilder: (context, event) => Center(
+          loadingBuilder: (context, event) => const Center(
             child: SizedBox(
               width: 20.0,
               height: 20.0,
