@@ -95,7 +95,7 @@ class _BidsPageState extends State<BidsPage> {
               backgroundColor: ColorManager.primary,
               onPressed: () {
                 if (markers.isNotEmpty) {
-                  Get.to(AddressPage(
+                  Get.to( AddressPage(
                     markers: markers,
                     add: false,
                   ));

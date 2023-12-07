@@ -144,8 +144,10 @@ class _AddressPageState extends State<AddressPage> {
                 map.Marker(
                     height: 40.h,
                     width: 40.w,
-                    point: LatLng(double.parse(widget.markers[i].lat!),
-                        double.parse(widget.markers[i].lng!)),
+                    point: LatLng(double.parse(widget.markers[i].lat!.toString().replaceAll('(', '').replaceAll(',', '')),
+                        double.parse(widget.markers[i].lng!.toString()
+                                      .replaceAll(' ', '')
+                                      .replaceAll(',', ''))),
                     builder: (_) {
                       return SvgPicture.asset(
                         'assets/icons/location1.svg',
