@@ -105,10 +105,10 @@ class _BidsPageState extends State<BidsPage> {
               icon: Icon(Icons.map, color: ColorManager.white)),
       body: SmartRefresher(
         enablePullDown: true,
-        enablePullUp: true,
+        // enablePullUp: true,
         controller: _refreshController,
         onRefresh: _onRefresh,
-        onLoading: _onLoading,
+        // onLoading: _onLoading,
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(

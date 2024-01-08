@@ -93,10 +93,38 @@ Future<void> makePhoneCall(String phoneNumber) async {
 }
 
 Future<void> openUrl(String url) async {
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
+  if (url.contains("http://") || url.contains("https://")) {
+    await canLaunchUrl(Uri.parse(url))
+        ? await launchUrl(Uri.parse(url))
+        : throw 'Could not launch Url';
   } else {
-    throw 'Could not launch $url';
+    String newUrl = "https://$url";
+    await canLaunchUrl(Uri.parse(newUrl))
+        ? await launchUrl(Uri.parse(newUrl))
+        : throw 'Could not launch Url';
+  }
+}
+
+launchFacebook(String launcher) async {
+  String fbProtocolUrl;
+  if (Platform.isIOS) {
+    fbProtocolUrl = 'fb://profile/page_id';
+  } else {
+    fbProtocolUrl = 'fb://page/page_id';
+  }
+
+  String fallbackUrl =
+      launcher.contains("https://") ? launcher : "https://$launcher";
+
+  try {
+    //
+    bool launched = await launchUrl(Uri.parse(fbProtocolUrl));
+
+    if (!launched) {
+      await launchUrl(Uri.parse(fallbackUrl));
+    }
+  } catch (e) {
+    await launchUrl(Uri.parse(fallbackUrl));
   }
 }
 
@@ -104,28 +132,27 @@ openWhatsapp(context, whatsapp) async {
   // //String link = 'https://api.whatsapp.com/send/?phone=$whatsapp&text=مرحبا';
   // var whatappURL_ios = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
 
-  String link = "https://wa.me/$whatsapp";
+  String link = "whatsapp://send?phone=+974$whatsapp&text=مرحبا";
   if (await canLaunchUrl(Uri.parse(link))) {
     return launchUrl(Uri.parse(link));
   } else {
-    showSnackBar("يجب تحميل الواتساب", context);
+    launchUrl(Uri.parse('https://wa.me/+974$whatsapp'));
   }
   //if (Platform.isIOS) {
-    // for iOS phone only
-    // if (await canLaunchUrl(Uri.parse(whatappURL_ios))) {
-    //   await launchUrl(Uri.parse(whatappURL_ios));
-    // } else {
-    //   ScaffoldMessenger.of(context)
-    //       .showSnackBar(SnackBar(content: new Text("يجب تحميل الواتساب")));
-    // }
+  // for iOS phone only
+  // if (await canLaunchUrl(Uri.parse(whatappURL_ios))) {
+  //   await launchUrl(Uri.parse(whatappURL_ios));
+  // } else {
+  //   ScaffoldMessenger.of(context)
+  //       .showSnackBar(SnackBar(content: new Text("يجب تحميل الواتساب")));
+  // }
 
   //} else {
 
   //}
 }
-openLinkdin(context,linkedinLink) async {
 
-
+openLinkdin(context, linkedinLink) async {
   String link = "https://$linkedinLink";
   if (await canLaunchUrl(Uri.parse(link))) {
     return launchUrl(Uri.parse(link));
@@ -150,7 +177,7 @@ Future<void> sendEmail(email) async {
   String? encodeQueryParameters(Map<String, String> params) {
     return params.entries
         .map((MapEntry<String, String> e) =>
-    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
 
