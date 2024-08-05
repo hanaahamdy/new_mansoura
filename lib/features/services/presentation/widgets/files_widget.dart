@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:open_file_safe/open_file_safe.dart';
-import 'package:ehsan_1/core/utils/extensions.dart';
+import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

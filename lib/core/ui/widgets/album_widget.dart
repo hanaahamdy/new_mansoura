@@ -1,8 +1,8 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/core/ui/widgets/views_widget.dart';
-import 'package:ehsan_1/core/utils/extensions.dart';
+import 'package:new_mansoura/core/ui/widgets/views_widget.dart';
+import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

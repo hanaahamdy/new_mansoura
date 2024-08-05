@@ -1,6 +1,6 @@
 
 import 'package:dio/src/cancel_token.dart';
-import 'package:ehsan_1/features/services/domain/repository/services_repository.dart';
+import 'package:new_mansoura/features/services/domain/repository/services_repository.dart';
 import '../../../../core/errors/base_error.dart';
 import '../../../../core/params/base_params.dart';
 import '../../../../core/params/no_params.dart';

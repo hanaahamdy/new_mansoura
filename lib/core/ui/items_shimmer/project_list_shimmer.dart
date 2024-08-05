@@ -1,4 +1,4 @@
-import 'package:ehsan_1/core/ui/items_shimmer/project_item_shimmer.dart';
+import 'package:new_mansoura/core/ui/items_shimmer/project_item_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ProjectListShimmer extends StatelessWidget {

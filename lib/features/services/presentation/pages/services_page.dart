@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/core/utils/extensions.dart';
-import 'package:ehsan_1/features/services/domain/entity/gallery_entity.dart';
-import 'package:ehsan_1/features/services/presentation/pages/gallery_page.dart';
-import 'package:ehsan_1/features/services/presentation/pages/search/search_page.dart';
+import 'package:new_mansoura/core/utils/extensions.dart';
+import 'package:new_mansoura/features/services/domain/entity/gallery_entity.dart';
+import 'package:new_mansoura/features/services/presentation/pages/gallery_page.dart';
+import 'package:new_mansoura/features/services/presentation/pages/search/search_page.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
@@ -256,7 +256,7 @@ class _ServicesPageState extends State<ServicesPage> {
               Align(
                   alignment: Alignment.center,
                   child: font16Text(
-                    'Go Ladies',
+                    'New Mansoura',
                     fontWeight: FontWeight.bold,
                   )),
               Align(

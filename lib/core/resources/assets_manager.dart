@@ -9,8 +9,8 @@ class ImageAssets {
   static const String onBoarding_img1 = "$imagePath/img1.svg";
   static const String onBoarding_img2 = "$imagePath/img2.svg";
   static const String onBoarding_img3 = "$imagePath/img3.svg";
-  static const String logo = "$imagePath/logo.png";
-  static const String logo1 = "$imagePath/logo.ong";
+  static const String logo = "$imagePath/logo.jpg";
+  static const String logo1 = "$imagePath/logo.jpg";
   static const String mobile = "$iconPath/mobile.svg";
   static const String lock = "$iconPath/lock.svg";
   static const String forgetpassword = "$imagePath/forgetpassword.svg";

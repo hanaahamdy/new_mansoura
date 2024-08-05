@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:ehsan_1/core/resources/utils.dart';
-import 'package:ehsan_1/core/ui/widgets/general_widgets/error_widgets.dart';
+import 'package:new_mansoura/core/resources/utils.dart';
+import 'package:new_mansoura/core/ui/widgets/general_widgets/error_widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

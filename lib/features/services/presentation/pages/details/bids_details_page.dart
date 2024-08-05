@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/core/resources/font_manager.dart';
+import 'package:new_mansoura/core/resources/font_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,7 +70,7 @@ class _BidsDetailsPageState extends State<BidsDetailsPage> {
           bloc: _bloc,
           builder: (_, state) {
             if (state is ServicesSuccess) {
-
+              print("ffff${state.data.whatsapp}");
 
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.end,

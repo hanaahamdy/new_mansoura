@@ -1,7 +1,7 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/src/cancel_token.dart';
-import 'package:ehsan_1/features/user_managment/data/datasource/user_remote_datasource.dart';
+import 'package:new_mansoura/features/user_managment/data/datasource/user_remote_datasource.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../core/errors/base_error.dart';

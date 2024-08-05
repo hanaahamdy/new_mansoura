@@ -1,4 +1,4 @@
-import 'package:ehsan_1/core/ui/items_shimmer/service_loading_widget.dart';
+import 'package:new_mansoura/core/ui/items_shimmer/service_loading_widget.dart';
 import 'package:flutter/material.dart';
 import '../../utils/functions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

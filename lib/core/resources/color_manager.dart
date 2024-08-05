@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ColorManager {
-  static Color primary =Color(0xffC21284);
+  static Color primary =Color(0xff2596be);
   //Color.fromRGBO(251, 79, 20, 1);
 
   static Color darkGrey = const Color(0xff525252);

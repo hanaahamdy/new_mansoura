@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.go_ladies">
+    package="com.app.new_mansoura">
    <application
-        android:label="Go ladies"
+        android:label="New Mansoura"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

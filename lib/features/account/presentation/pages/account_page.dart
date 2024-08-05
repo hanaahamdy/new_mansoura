@@ -2,7 +2,7 @@
 import 'package:avatar_view/avatar_view.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/core/utils/extensions.dart';
+import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

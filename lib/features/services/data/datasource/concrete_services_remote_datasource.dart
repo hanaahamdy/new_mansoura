@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/features/services/data/datasource/service_remote_datasource.dart';
+import 'package:new_mansoura/features/services/data/datasource/service_remote_datasource.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/datasource/remote_data_source.dart';
 import '../../../../core/errors/base_error.dart';

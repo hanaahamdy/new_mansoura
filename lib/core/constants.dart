@@ -20,7 +20,7 @@ const HEADER_CONTENT_TYPE = 'Content-Type';
 const HEADER_ACCEPT = 'Accept';
 
 // ====================  APP_NAME API URL ====================
-const API_BASE = 'https://go-ladies.online/api';
+const API_BASE = 'https://newmansoura.app/api';
 //==========================
 //   User Management API
 //==========================

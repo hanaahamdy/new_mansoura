@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:dio/dio.dart';
-import 'package:ehsan_1/features/services/domain/repository/services_repository.dart';
+import 'package:new_mansoura/features/services/domain/repository/services_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/di.dart';

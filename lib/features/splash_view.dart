@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:ehsan_1/features/services/presentation/pages/services_page.dart';
+import 'package:new_mansoura/features/services/presentation/pages/services_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -44,7 +44,7 @@ class _SplashViewState extends State<SplashView> {
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
-              'assets/images/logo.png',
+              'assets/images/logo.jpg',
                 width: 250.w,
               height: 250.w,
               fit: BoxFit.contain,

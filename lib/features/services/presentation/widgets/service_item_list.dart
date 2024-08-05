@@ -1,4 +1,4 @@
-import 'package:ehsan_1/core/utils/extensions.dart';
+import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/resources/color_manager.dart';

@@ -1,6 +1,6 @@
 
-import 'package:ehsan_1/core/resources/styles_manager.dart';
-import 'package:ehsan_1/core/resources/values_manager.dart';
+import 'package:new_mansoura/core/resources/styles_manager.dart';
+import 'package:new_mansoura/core/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -128,28 +128,26 @@ launchFacebook(String launcher) async {
   }
 }
 
-openWhatsapp(context, whatsapp) async {
-  // //String link = 'https://api.whatsapp.com/send/?phone=$whatsapp&text=مرحبا';
-  // var whatappURL_ios = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
-
-  String link = "whatsapp://send?phone=+974$whatsapp&text=مرحبا";
-  if (await canLaunchUrl(Uri.parse(link))) {
-    return launchUrl(Uri.parse(link));
-  } else {
-    launchUrl(Uri.parse('https://wa.me/+974$whatsapp'));
+void openWhatsapp(BuildContext context, String phoneNumber) async {
+  var whatsappUrl = "whatsapp://send?phone=2$phoneNumber";
+  try {
+    bool canLaunchWhatsApp = await canLaunch(whatsappUrl);
+    if (canLaunchWhatsApp) {
+      await launch(whatsappUrl);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on your device"),
+        ),
+      );
+    }
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("Could not open WhatsApp"),
+      ),
+    );
   }
-  //if (Platform.isIOS) {
-  // for iOS phone only
-  // if (await canLaunchUrl(Uri.parse(whatappURL_ios))) {
-  //   await launchUrl(Uri.parse(whatappURL_ios));
-  // } else {
-  //   ScaffoldMessenger.of(context)
-  //       .showSnackBar(SnackBar(content: new Text("يجب تحميل الواتساب")));
-  // }
-
-  //} else {
-
-  //}
 }
 
 openLinkdin(context, linkedinLink) async {
