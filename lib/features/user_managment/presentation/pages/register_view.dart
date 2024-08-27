@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:new_mansoura/core/extentions/form_field.dart';
 import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -252,7 +253,11 @@ class _RegisterViewState extends State<RegisterView> {
                     }),
                     widthSpace(10.w),
                     font14Text('أوافق على الشروط والأحكام',
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w500).asFormField(validator: (val){
+                          if(agree==false){
+                            return "برجاء الاختيار";
+                          }
+                    }),
                   ],
                 ),
                 heightSpace(27.h),

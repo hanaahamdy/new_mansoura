@@ -1,5 +1,6 @@
 
 import 'package:dio/dio.dart';
+import 'package:new_mansoura/core/extentions/form_field.dart';
 import 'package:new_mansoura/core/utils/extensions.dart';
 import 'package:new_mansoura/features/user_managment/presentation/pages/register_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -198,7 +199,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: click
                               ? ColorManager.white
                               : ColorManager.primary),
-                    ).onTap(() {
+                    ).asFormField(validator: (val){
+                      if(click==false){
+                        return"برجاء الاختيار";
+                      };
+                    }).onTap(() {
                       setState(() {
                         click = !click;
                       });
@@ -213,8 +218,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         _bloc.add(LoginEvent(
                             email: _userEmailController.text,
                             password: _userPasswordController.text));
-
-                        ///store phone and password
                         if (click == true) {
                           await locator<AppPreferences>().saveUser(
                               _userEmailController.text,
@@ -228,54 +231,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: ColorManager.white,
                         fontWeight: FontWeight.bold)),
                 heightSpace(25.h),
-                // Platform.isAndroid ? Container(): _buildOrWidget(),
-                // heightSpace(25.h),
-                // Platform.isAndroid ? Container(): BlocListener<SocialBloc, SocilaState>(
-                //   bloc: _socialBloc,
-                //   listener: (_, state){
-                //     if(state is SocilaSuccess){
-                //       Get.back();
-                //       Get.offAll(ServicesPage());
-                //     }
-                //     else if(state is SocilaLoading){
-                //       showMyDialog(context);
-                //     }
-                //     else if(state is SocialFailure){
-                //       Get.back();
-                //       showFailureDialoge(context, state.error!.message!);
-                //     }
-                //   },
-                //   child: AppleSignInButton(
-                //     style: stp.ButtonStyle.black, // style as needed
-                //     type: ButtonType.signIn, // style as needed
-                //     onPressed: () async{
-                //       _socialBloc.add(SocialEvent(context: context, type: ""));
-                //     },
-                //   ),
-                // ),
-                // heightSpace(10.h),
-                // BlocListener<LocalAuthBloc, LocalAuthState>(
-                //     bloc: _localAuthBloc,
-                //     listener: (_, state) {
-                //       if (state is LocalAuthSuccess) {
-                //         Get.back();
-                //         Get.offAll(MainPage());
-                //       } else if (state is LocalAuthLoading) {
-                //         showMyDialog(context);
-                //       } else if (state is LocalAuthFailure) {
-                //         Get.back();
-                //         showFailureDialoge(context, state.error!.message);
-                //       }
-                //     },
-                //     child: Center(
-                //             child: font14Text('الدخول ببصمة الوجه',
-                //                 color: ColorManager.primary,
-                //                 textDecoration: TextDecoration.underline,
-                //                 textAlign: TextAlign.center,
-                //                 fontWeight: FontWeight.bold))
-                //         .onTap(() {
-                //       _localAuthBloc.add(LocalAuthEvent(context: context));
-                //     })),
                 heightSpace(10.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -288,7 +243,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: ColorManager.grey, fontWeight: FontWeight.w700),
                   ],
                 ).onTap(() {
-                  Get.to(RegisterView());
+                  Get.to(const RegisterView());
                 })
               ],
             ),
@@ -297,75 +252,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
-  // _buildSocialButtons() {
-  //   if (mounted) {
-  //     return Row(
-  //       children: [
-  //         Expanded(
-  //           flex: 1,
-  //           child: BlocListener<SocialBloc, SocilaState>(
-  //               bloc: _socialBloc,
-  //               listener: (_, state) {
-  //                 if (state is SocilaLoading) {
-  //                   showMyDialog(context);
-  //                 }
-  //                 if (state is SocilaSuccess) {
-  //                   Get.back();
-  //                   Get.offAll(const MainPage());
-  //                 } else if (state is SocialFailure) {
-  //                   Get.back();
-  //                   showFailureDialoge(context, state.error!.message!);
-  //                 }
-  //               },
-  //               child:
-  //                   _buildBoton('google', 'عن طريق جوجل', ImageAssets.google)),
-  //         ),
-  //         widthSpace(10.w),
-  //         Expanded(
-  //           flex: 1,
-  //           child: BlocListener<FaceBloc, FaceState>(
-  //               bloc: _faceBloc,
-  //               listener: (_, state) {
-  //                 if (state is FaceSuccess) {
-  //                   Get.back();
-  //                   Get.offAll(const MainPage());
-  //                 } else if (state is FaceLoading) {
-  //                   showMyDialog(context);
-  //                 } else if (state is FaceFailure) {
-  //                   Get.back();
-  //                   showFailureDialoge(context, state.error!.message!);
-  //                 }
-  //               },
-  //               child: _buildBoton(
-  //                   'facebook', 'عن طريق فيسبوك', ImageAssets.facebook)),
-  //         ),
-  //       ],
-  //     );
-  //   }
-  // }
-
-  // _buildBoton(type, text, image) {
-  //   return StyledButton(
-  //       function: () {
-  //         if (type == 'google') {
-  //           _socialBloc.add(SocialEvent(context: context, type: type));
-  //         } else if (type == 'facebook') {
-  //           _faceBloc.add(FaceEvent(context: context));
-  //         }
-  //       },
-  //       fillColor: ColorManager.lightGrey,
-  //       radius: true,
-  //       child: Row(
-  //         mainAxisAlignment: MainAxisAlignment.center,
-  //         children: [
-  //           font14Text(text, fontWeight: FontWeight.w500),
-  //           widthSpace(10.w),
-  //           SvgPicture.asset(image, height: 20.h, width: 16.w),
-  //         ],
-  //       ));
-  // }
-
   _buildOrWidget() {
     return Row(
       children: [
